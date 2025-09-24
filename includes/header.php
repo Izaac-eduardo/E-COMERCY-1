@@ -18,6 +18,14 @@
                     🛒 Carrinho
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
+                
+                <button  class="cart-icon" id="cartIcon">
+                    <a href="teste.php">
+
+                    teste
+                    </a>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
             </div>
         </div>
     </header>
