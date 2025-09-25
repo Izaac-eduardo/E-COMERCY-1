@@ -10,7 +10,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             color: #333;
-            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            background-image: url('img/fundo.jpg');
             background-repeat: repeat;
         }
 
@@ -423,3 +423,15 @@
             margin-bottom: 1rem;
         }
     
+.d-block{
+    height: 50%;
+    width: 38% !important;
+   
+}
+
+.carousel-item{
+    background-color: #333;
+}
+
+
+

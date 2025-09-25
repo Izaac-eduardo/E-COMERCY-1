@@ -5,7 +5,7 @@ const products = [
         id: 1,
         name: "Action Figure Goku Super Sayajin",
         price: 159.90,
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%23FFD700'/%3E%3Ctext x='150' y='125' font-family='Arial' font-size='20' fill='%23FF6B00' text-anchor='middle' dominant-baseline='middle'%3EGoku Figure%3C/text%3E%3C/svg%3E",
+        image: "img/goku.jpg",
         description: "Action figure premium do Goku em sua forma Super Sayajin",
         category: "action-figures"
     },
@@ -13,23 +13,23 @@ const products = [
         id: 2,
         name: "Camiseta Batman Logo",
         price: 79.90,
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%23000000'/%3E%3Ctext x='150' y='125' font-family='Arial' font-size='20' fill='%23FFD700' text-anchor='middle' dominant-baseline='middle'%3EBatman Tee%3C/text%3E%3C/svg%3E",
+        image: "img/bat.webp",
         description: "Camiseta preta com o icônico logo do Batman",
         category: "roupas"
     },
     {
         id: 3,
-        name: "The Legend of Zelda: Tears of Kingdom",
+        name: "Paword",
         price: 299.90,
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%2300AA00'/%3E%3Ctext x='150' y='125' font-family='Arial' font-size='18' fill='%23FFFFFF' text-anchor='middle' dominant-baseline='middle'%3EZelda Game%3C/text%3E%3C/svg%3E",
-        description: "Última aventura épica de Link em Hyrule",
+        image: "img/paw.jpg",
+        description: "pegue todos os paws",
         category: "games"
     },
     {
         id: 4,
         name: "Caneca Star Wars Darth Vader",
         price: 49.90,
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%23333333'/%3E%3Ctext x='150' y='125' font-family='Arial' font-size='16' fill='%23FF0000' text-anchor='middle' dominant-baseline='middle'%3EVader Mug%3C/text%3E%3C/svg%3E",
+        image: "img/vader.webp",
         description: "Caneca temática do Darth Vader com efeito térmico",
         category: "acessorios"
     },
@@ -37,7 +37,7 @@ const products = [
         id: 5,
         name: "Funko Pop Naruto",
         price: 89.90,
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%23FFA500'/%3E%3Ctext x='150' y='125' font-family='Arial' font-size='18' fill='%23000080' text-anchor='middle' dominant-baseline='middle'%3ENaruto Pop%3C/text%3E%3C/svg%3E",
+        image: "img/funko.webp",
         description: "Funko Pop colecionável do protagonista Naruto Uzumaki",
         category: "action-figures"
     },
@@ -45,7 +45,7 @@ const products = [
         id: 6,
         name: "Livro: Guia do Mochileiro das Galáxias",
         price: 39.90,
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%234169E1'/%3E%3Ctext x='150' y='125' font-family='Arial' font-size='16' fill='%23FFFFFF' text-anchor='middle' dominant-baseline='middle'%3EHitchhiker Guide%3C/text%3E%3C/svg%3E",
+        image: "img/livro.jpg",
         description: "Clássico da ficção científica de Douglas Adams",
         category: "livros"
     },
@@ -53,7 +53,7 @@ const products = [
         id: 7,
         name: "Mousepad Gamer RGB LED",
         price: 119.90,
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%23FF1493'/%3E%3Ctext x='150' y='125' font-family='Arial' font-size='16' fill='%23FFFFFF' text-anchor='middle' dominant-baseline='middle'%3ERGB Mousepad%3C/text%3E%3C/svg%3E",
+        image: "img/pad.webp",
         description: "Mousepad gamer com iluminação RGB personalizável",
         category: "acessorios"
     },
@@ -61,7 +61,7 @@ const products = [
         id: 8,
         name: "Cyberpunk 2077 Phantom Liberty",
         price: 199.90,
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%23FF00FF'/%3E%3Ctext x='150' y='125' font-family='Arial' font-size='16' fill='%23FFFF00' text-anchor='middle' dominant-baseline='middle'%3ECyberpunk 2077%3C/text%3E%3C/svg%3E",
+        image: "img/ciber.jpg",
         description: "Expansão do aclamado jogo futurístico",
         category: "games"
     },
@@ -69,7 +69,7 @@ const products = [
         id: 9,
         name: "Moletom Rick and Morty",
         price: 149.90,
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%2300CED1'/%3E%3Ctext x='150' y='125' font-family='Arial' font-size='16' fill='%23228B22' text-anchor='middle' dominant-baseline='middle'%3ERick %26 Morty%3C/text%3E%3C/svg%3E",
+        image: "img/moleton.webp",
         description: "Moletom confortável com estampa da dupla dimensional",
         category: "roupas"
     }
