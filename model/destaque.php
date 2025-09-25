@@ -64,3 +64,4 @@ function calcularPrecoComDesconto($preco, $desconto) {
     return 'R$ ' . number_format($valorDesconto, 2, ',', '.');
 }
 ?>
+
