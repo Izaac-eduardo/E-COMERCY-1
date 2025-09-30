@@ -1,0 +1,33 @@
+# SO / Sistema
+Thumbs.db
+.DS_Store
+Desktop.ini
+$RECYCLE.BIN/
+
+# MacOS extrações zip
+__MACOSX/
+
+# Logs
+*.log
+logs/
+
+# Ambiente / IDE
+.vscode/
+.idea/
+*.iml
+
+# Cache PHP / Composer (se vier futuramente)
+/vendor/
+composer.lock
+
+# Cache / temporários
+*.tmp
+*.temp
+~$*
+
+# Node (se adicionado depois)
+node_modules/
+
+# Outras
+.env
+.env.local

@@ -1,0 +1,89 @@
+body {
+ 
+}
+
+.login {
+    width: 380px;
+    padding: 100px 10px;
+    margin: auto;
+}
+
+.alert {
+    margin: 0;
+    padding: 0 10px;
+}
+
+.card {
+    box-shadow: 0 0 10px #CCC;
+    border-radius: 0;
+    margin: 30px 0;
+
+    .card-header {
+        border-bottom: 1px solid #CCC;
+    }
+}
+
+.form-control, .btn {
+    border-radius: 0;
+}
+
+.form-control[readonly] {
+    background:  transparent;
+}
+
+label{
+    color: white;
+    font-weight: 900;
+}
+.parsley-errors-list {
+    color: #F00;
+    list-style: none;
+    margin-left: -30px;
+}
+
+#erro {
+    margin-top: -15px;
+}
+
+.footer, .navbar {
+    
+    padding: 10px 0 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+label {
+    margin-top: 15px;
+}
+
+.card-body {
+   background-color: #07070e;
+}
+
+.card-header {
+    background-color: #07070e;
+    
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#email.form-control{
+    background-color: #07070e;
+}
+
+#senha.form-control{
+    background-color: #07070e;
+}
+
+.btn{
+    background-color: #07070e;
+}
