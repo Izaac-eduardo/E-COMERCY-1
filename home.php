@@ -2,8 +2,7 @@
 <?php
 $page_title = "HAINGPOINT - Sua Loja Geek";
 $current_page = "home";
-include 'includes/header.php';
-include 'model/destaque.php';
+
 ?>
 
 

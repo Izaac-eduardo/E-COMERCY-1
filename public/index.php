@@ -29,6 +29,23 @@ session_start();
     <script src="js/parsley.min.js"></script>
     <script src="js/sweetalert2.js"></script>
 
+
+    <script>
+        function mensagem(titulo, icone, pagina) {
+            Swal.fire({
+                title: titulo,
+                icone: icone,
+
+            }).then((result) => {
+                if (icone == "error"){
+                    history.back();
+                } else {
+                    location.href = pagina;
+                }
+            });
+        }
+    </script>
+
 </head>
 <body style="background-image: url('../img/fundo.jpg'); background-size: cover;">
 
@@ -44,11 +61,22 @@ session_start();
 if ( ($_POST) && (!isset($_SESSION['usuario']))) {
     //validacao do usuario
 
+require "../controllers/IndexController.php";
+
+//print_r($_POST);
+$pagina  = new IndexController();
+$pagina->verificar($_POST);
+
+
+
+
 
 } else if ( !isset($_SESSION['usuario'])) {
     require "../views/login/index.php";
     //mostra a tela do sistema
 } else if ( isset($_SESSION['usuario'])) {
+    //echo"oi";
+    require "../home.php";
     //mostro a tela do sistema
 } else {
     echo "<p>Requisição invalida</p>";
