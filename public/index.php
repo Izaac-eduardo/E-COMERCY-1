@@ -14,6 +14,9 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <base href="http://<?=$_SERVER["SERVER_NAME"].$_SERVER["SCRIPT_NAME"]?>">;
+
     <title>loxinha</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -75,9 +78,25 @@ $pagina->verificar($_POST);
     require "../views/login/index.php";
     //mostra a tela do sistema
 } else if ( isset($_SESSION['usuario'])) {
-    //echo"oi";
+    
+
     require "../home.php";
     //mostro a tela do sistema
+
+  if (isset($_GET["param"])){
+    $param = explode("/", $_GET["param"]);
+  }
+$controller  = $param[0] ?? "home";
+$view        = $param[1] ?? "index";
+$id = $param[2] ?? null;
+
+$controller = ucfirst($controller)."Controller";
+if (file_exists("../controller/{$controller}.php")){require "../controller/{$controller}.php";
+} else {
+    require "../views/index/erro.php";
+}
+
+
 } else {
     echo "<p>Requisição invalida</p>";
 }
