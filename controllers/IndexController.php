@@ -31,6 +31,8 @@ echo "<script>mensagem('Digite a senha', 'error', '');</script>";
    
 }
 
+
+
 $dadosUsuario = $this->usuario->getEmailUsuario($email);
 
 if (empty($dadosUsuario->id)){
