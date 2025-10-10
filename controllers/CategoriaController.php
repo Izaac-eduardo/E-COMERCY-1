@@ -12,4 +12,7 @@ class CategoriaController{
     $pdo = $conexao->conectar();
     $this->categoria = new Categoria($pdo);
    }
+   public function index($id){
+    require "../views/categoria/index.php";
+   }
 }

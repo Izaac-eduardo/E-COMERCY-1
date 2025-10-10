@@ -52,6 +52,7 @@ $current_page = "home";
                 <button class="filter-btn" data-category="roupas">Roupas</button>
                 <button class="filter-btn" data-category="acessorios">Acessórios</button>
                 <button class="filter-btn" data-category="livros">Livros</button>
+                <a href="categoria">categoria</a>
             </div>
         </div>
 

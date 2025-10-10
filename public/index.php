@@ -91,7 +91,13 @@ $view        = $param[1] ?? "index";
 $id = $param[2] ?? null;
 
 $controller = ucfirst($controller)."Controller";
-if (file_exists("../controller/{$controller}.php")){require "../controller/{$controller}.php";
+if (file_exists("../controllers/{$controller}.php"))
+
+{require "../controllers/{$controller}.php";
+
+    $control = new $controller();
+    $control->$view($id);
+
 } else {
     require "../views/index/erro.php";
 }
