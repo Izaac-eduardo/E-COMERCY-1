@@ -63,28 +63,7 @@ $current_page = "home";
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="img/fur.jpg" class="d-block w-50" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Fursuit Sergal</h5>
-        <p>Fursuit Parcial de Sergal Branco.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="img/estatua.webp" class="d-block w-50" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Action Figure Hollow Knight</h5>
-        <p>Decoração gamer de alta qualidade.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="img/arma.jpg" class="d-block w-50" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Pistola Jinx</h5>
-        <p>Arma decorativa da  Jinx.</p>
-      </div>
-    </div>
+  
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

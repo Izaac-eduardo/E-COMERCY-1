@@ -1,42 +1,43 @@
 <?php
+    //incluir a conexao e o model
+    require "../config/Conexao.php";
+    require "../models/Categoria.php";
 
-require "..//config/Conexao.php";
-require "..//models/Categoria.php";
+    class CategoriaController {
 
-class CategoriaController{
-    private $categoria;
+        private $categoria;
 
-   public function __construct()
-   {
-    $conexao = new conexao();
-    $pdo = $conexao->conectar();
-    $this->categoria = new Categoria($pdo);
-   }
-   public function index($id){
-    require "../views/categoria/index.php";
-   }
+        public function __construct()
+        {
+            $conexao = new Conexao();
+            $pdo = $conexao->conectar();
+            $this->categoria = new Categoria($pdo);
+        }
 
-   public function salvar(){
-    $nome = trim($_POST['nome'] ?? NULL);
-    $ativo = trim($_POST['ativo'] ?? NULL);
+        public function index($id) {
+            require "../views/categoria/index.php";
+        }
 
-    if (empty($nome)){
-      echo "<script>mensagem('O nome é obrigatorio', 'error', '');</script>";
-      exit;
-   }else if (empty($ativo)){
-      echo "<script>mensagem('O campo ativo é obrigatorio', 'error', '');</script>";
-      exit;
-   }
-   
+        public function salvar() {
+            $nome = trim($_POST["nome"] ?? NULL);
+            $ativo = trim($_POST["ativo"] ?? NULL);
 
-   $msg =  $this->categoria->salvarDados($_POST);
+            if (empty($nome)) {
+                echo "<script>mensagem('Preencha o nome','error','')</script>";
+                exit;
+            } else if (empty($ativo)) {
+                echo "<script>mensagem('Selecione o ativo','error','')</script>";
+                exit;
+            }
 
-   if ($msg == 1){
-       echo "<script>mensagem('deu certo','ok','categoria/salvar');</script>";
-   }else{
-       echo "<script>mensagem('deu errado','error','');</script>";
-       exit;
-   }
+            $msg = $this->categoria->salvarDados($_POST);
 
-}
-}
+            if ($msg == 1) {
+                echo "<script>mensagem('Registro Salvo','ok','categoria/listar');</script>";
+                exit;
+            } else {
+                echo "<script>mensagem('Erro ao Salvar','error','')</script>";
+                exit;
+            }
+        }
+    }

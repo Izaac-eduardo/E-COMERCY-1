@@ -1,29 +1,21 @@
-<?php 
-// a função deste index é apenas para direcionar para as páginas corretas
-
-//abrir sessão
+<?php
+//abrir uma sessao
 session_start();
-
-// echo $_SESSION['nome'];
-// var_dump($_SESSION['carrinho']);
-
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burnes Shop</title>
 
-    <base href="http://<?=$_SERVER["SERVER_NAME"].$_SERVER["SCRIPT_NAME"]?>">;
-
-    <title>loxinha</title>
+    <base href="http://<?=$_SERVER["SERVER_NAME"].$_SERVER["SCRIPT_NAME"]?>">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/sweetalert2.min.css">
     <link rel="stylesheet" href="css/style.css">
-  
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -32,82 +24,72 @@ session_start();
     <script src="js/parsley.min.js"></script>
     <script src="js/sweetalert2.js"></script>
 
-
     <script>
         function mensagem(titulo, icone, pagina) {
             Swal.fire({
                 title: titulo,
-                icone: icone,
-
+                icone: icone, //error, ok, success, question
             }).then((result) => {
-                if (icone == "error"){
+                
+                if (icone == "error") {
                     history.back();
                 } else {
                     location.href = pagina;
                 }
+
             });
         }
     </script>
-
 </head>
-<body style="background-image: url('../img/fundo.jpg'); background-size: cover;">
 
-<?php 
+<body>
+    <?php
+    //verificar se esta logado - senao estiver login
+    //se nao esta logado mas esta enviando dados - validacao
+    //se estiver logado - mostro a tela do sistema
+    if (($_POST) && (!isset($_SESSION["usuario"]))) {
+        //validacao do usuario
 
-// MOSTRAR O PARAM DO .HTACESS
-// echo $_GET['param'] ?? 'Nenhum parâmetro informado';
+        require "../controllers/IndexController.php";
 
+        //print_r($_POST);
+        $pagina = new IndexController();
+        $pagina->verificar($_POST);
 
-//VERIFICAR SE ESTA LOGADO - SENAO ESTIVER LOGIN
-//SE NAO TIVER LOGADO MAS ESTA ENVIANDO DADOS - VALIDAÇÃO
-//SE ESTIVER LOGADO - MOSTRO A TELA DO SISTEMA
-if ( ($_POST) && (!isset($_SESSION['usuario']))) {
-    //validacao do usuario
+    } else if (!isset($_SESSION["usuario"])) {
+        //mostrar a tela de login
+        require "../views/login/index.php";
+    } else if (isset($_SESSION["usuario"])) {
+        //mostro a tela do sistema
+        require "menu.php";
 
-require "../controllers/IndexController.php";
+        //rotas
+        if (isset($_GET["param"])) {
+            $param = explode("/", $_GET["param"]);
+        }
 
-//print_r($_POST);
-$pagina  = new IndexController();
-$pagina->verificar($_POST);
+        $controller = $param[0] ?? "index";
+        $view = $param[1] ?? "index";
+        $id = $param[2] ?? NULL;
 
+        // categoria -> CategoriaController
+        $controller = ucfirst($controller)."Controller";
 
+        //incluir o controller
+        if (file_exists("../controllers/{$controller}.php")) {
+            require "../controllers/{$controller}.php";
 
+            $control = new $controller();
+            $control->$view($id);
 
-
-} else if ( !isset($_SESSION['usuario'])) {
-    require "../views/login/index.php";
-    //mostra a tela do sistema
-} else if ( isset($_SESSION['usuario'])) {
-    
-
-    require "../home.php";
-    //mostro a tela do sistema
-
-  if (isset($_GET["param"])){
-    $param = explode("/", $_GET["param"]);
-  }
-$controller  = $param[0] ?? "home";
-$view        = $param[1] ?? "index";
-$id = $param[2] ?? null;
-
-$controller = ucfirst($controller)."Controller";
-if (file_exists("../controllers/{$controller}.php"))
-
-{require "../controllers/{$controller}.php";
-
-    $control = new $controller();
-    $control->$view($id);
-
-} else {
-    require "../views/index/erro.php";
-}
-
-
-} else {
-    echo "<p>Requisição invalida</p>";
-}
-
-?>
-    
+        } else {
+            require "../views/index/erro.php";
+        }
+        
+    } else {
+        echo "<p>Requisição inválida</p>";
+    }
+    ?>
 </body>
+
 </html>

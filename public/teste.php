@@ -1,5 +1,5 @@
-<?php 
+<?php
     session_start();
-    $_SESSION['nome'] = "Murilo";
-    $_SESSION['carrinho'] = array("Produto 1", "Produto 2", "Produto 3");
-?>
+
+    $_SESSION["nome"] = "Luiz da Silva";
+    $_SESSION["carrinho"] = array("nome"=>"PS5");
